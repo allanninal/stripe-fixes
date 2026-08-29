@@ -14,6 +14,7 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 - [account default API version is years behind the current one](./account-default-api-version-stale/) — https://www.allanninal.dev/stripe/account-default-api-version-stale/
 - [the platform collects zero application fees on its charges](./application-fees-zero-on-platform/) — https://www.allanninal.dev/stripe/application-fees-zero-on-platform/
 - [automatic_tax is off on every invoice while selling abroad](./automatic-tax-disabled-everywhere/) — https://www.allanninal.dev/stripe/automatic-tax-disabled-everywhere/
+- [automatic_tax reports requires_location_inputs on live bills](./automatic-tax-requires-location-inputs/) — https://www.allanninal.dev/stripe/automatic-tax-requires-location-inputs/
 - [charges captured after AVS and CVC verification failed](./avs-cvc-fail-captured/) — https://www.allanninal.dev/stripe/avs-cvc-fail-captured/
 - [bank-debit intents stay in processing for over a week](./bank-debit-intents-stuck-processing/) — https://www.allanninal.dev/stripe/bank-debit-intents-stuck-processing/
 - [no Billing Portal configuration, so portal sessions 400](./billing-portal-no-configuration/) — https://www.allanninal.dev/stripe/billing-portal-no-configuration/
@@ -34,11 +35,15 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 - [customers have no email, so Stripe sends no receipts](./customers-missing-email/) — https://www.allanninal.dev/stripe/customers-missing-email/
 - [enabled_events lists event types that are dead or rejected](./dead-or-rejected-enabled-events/) — https://www.allanninal.dev/stripe/dead-or-rejected-enabled-events/
 - [disputes are hours from due_by with no evidence attached](./dispute-deadline-72h-no-evidence/) — https://www.allanninal.dev/stripe/dispute-deadline-72h-no-evidence/
+- [dispute activity is above the 0.75% excessive threshold](./dispute-rate-above-threshold/) — https://www.allanninal.dev/stripe/dispute-rate-above-threshold/
 - [disputes closed as lost were never actually contested](./disputes-lost-without-response/) — https://www.allanninal.dev/stripe/disputes-lost-without-response/
+- [draft invoices blocked on customer_tax_location_invalid](./draft-invoices-blocked-by-tax-location/) — https://www.allanninal.dev/stripe/draft-invoices-blocked-by-tax-location/
 - [draft invoices sit for months and never finalize](./draft-invoices-never-finalized/) — https://www.allanninal.dev/stripe/draft-invoices-never-finalized/
 - [dunning ran out of retries and no attempt is scheduled](./dunning-retries-exhausted/) — https://www.allanninal.dev/stripe/dunning-retries-exhausted/
 - [duplicate customers share an email and split billing](./duplicate-customers-same-email/) — https://www.allanninal.dev/stripe/duplicate-customers-same-email/
 - [two endpoints share one URL, so every event is handled twice](./duplicate-endpoints-same-url/) — https://www.allanninal.dev/stripe/duplicate-endpoints-same-url/
+- [actionable early fraud warnings were never refunded](./efw-actionable-not-refunded/) — https://www.allanninal.dev/stripe/efw-actionable-not-refunded/
+- [elevated-risk charges captured with no manual review](./elevated-risk-charges-no-review/) — https://www.allanninal.dev/stripe/elevated-risk-charges-no-review/
 - [endpoints render events at different pinned API versions](./endpoint-api-version-drift/) — https://www.allanninal.dev/stripe/endpoint-api-version-drift/
 - [a webhook endpoint is pinned to an ancient api_version](./endpoint-api-version-pinned-stale/) — https://www.allanninal.dev/stripe/endpoint-api-version-pinned-stale/
 - [events still show pending_webhooks hours after they fired](./events-with-pending-webhooks/) — https://www.allanninal.dev/stripe/events-with-pending-webhooks/
@@ -48,9 +53,12 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 - [future_requirements will revoke a capability on a date](./future-requirements-deadline-ignored/) — https://www.allanninal.dev/stripe/future-requirements-deadline-ignored/
 - [highest-risk charges succeed instead of being blocked](./highest-risk-charges-succeeded/) — https://www.allanninal.dev/stripe/highest-risk-charges-succeeded/
 - [reused idempotency keys hit 409 idempotency_key_in_use](./idempotency-key-reuse-conflict/) — https://www.allanninal.dev/stripe/idempotency-key-reuse-conflict/
+- [incomplete_expired volume means confirmation is broken](./incomplete-expired-signup-leak/) — https://www.allanninal.dev/stripe/incomplete-expired-signup-leak/
+- [inquiries sit unanswered and escalate into chargebacks](./inquiry-needs-response-ignored/) — https://www.allanninal.dev/stripe/inquiry-needs-response-ignored/
 - [legacy card sources still live under customer.sources](./legacy-card-sources-still-attached/) — https://www.allanninal.dev/stripe/legacy-card-sources-still-attached/
 - [charges have a null payment_intent, which means the legacy Charges API](./legacy-charges-api-no-payment-intent/) — https://www.allanninal.dev/stripe/legacy-charges-api-no-payment-intent/
 - [metered subscription items with no usage reported](./metered-items-with-no-usage-reported/) — https://www.allanninal.dev/stripe/metered-items-with-no-usage-reported/
+- [EU business invoices with no VAT number miss reverse charge](./missing-customer-tax-ids-b2b-eu/) — https://www.allanninal.dev/stripe/missing-customer-tax-ids-b2b-eu/
 - [nothing subscribes to disputes or early fraud warnings](./missing-dispute-and-fraud-events/) — https://www.allanninal.dev/stripe/missing-dispute-and-fraud-events/
 - [payment-creating requests carry no idempotency key](./missing-idempotency-keys-on-payments/) — https://www.allanninal.dev/stripe/missing-idempotency-keys-on-payments/
 - [no endpoint subscribes to any payment failure event](./missing-payment-failure-events/) — https://www.allanninal.dev/stripe/missing-payment-failure-events/
@@ -58,6 +66,7 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 - [no statement descriptor, so customers dispute what they see](./missing-statement-descriptor/) — https://www.allanninal.dev/stripe/missing-statement-descriptor/
 - [customer.subscription.deleted is missing, so access never ends](./missing-subscription-deleted/) — https://www.allanninal.dev/stripe/missing-subscription-deleted/
 - [recent events carry two different api_version values](./mixed-event-api-versions/) — https://www.allanninal.dev/stripe/mixed-event-api-versions/
+- [elevated-risk card charges are captured with no 3DS](./no-3ds-on-elevated-risk/) — https://www.allanninal.dev/stripe/no-3ds-on-elevated-risk/
 - [a connected account has no external account to pay out to](./no-external-account-attached/) — https://www.allanninal.dev/stripe/no-external-account-attached/
 - [live mode has no webhook endpoint, so nothing is ever pushed](./no-live-webhook-endpoints/) — https://www.allanninal.dev/stripe/no-live-webhook-endpoints/
 - [no tax registrations while invoicing many countries](./no-tax-registrations-while-selling-abroad/) — https://www.allanninal.dev/stripe/no-tax-registrations-while-selling-abroad/
@@ -84,6 +93,8 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 - [a report run fails after the 200 and the CSV never lands](./report-run-failed-silently/) — https://www.allanninal.dev/stripe/report-run-failed-silently/
 - [requirements.past_due has already disabled the payouts](./requirements-past-due-disables-account/) — https://www.allanninal.dev/stripe/requirements-past-due-disables-account/
 - [save_default_payment_method off orphans the card after payment](./save-default-payment-method-off/) — https://www.allanninal.dev/stripe/save-default-payment-method-off/
+- [subscriptions frozen on requires_action 3DS authentication](./sca-authentication-stuck-subscriptions/) — https://www.allanninal.dev/stripe/sca-authentication-stuck-subscriptions/
+- [invoiced subscriptions with no days_until_due never age](./send-invoice-without-days-until-due/) — https://www.allanninal.dev/stripe/send-invoice-without-days-until-due/
 - [SetupIntents use on_session but you bill off-session](./setup-intent-on-session-for-off-session/) — https://www.allanninal.dev/stripe/setup-intent-on-session-for-off-session/
 - [SetupIntents are created but never confirmed by the client](./setup-intents-never-confirmed/) — https://www.allanninal.dev/stripe/setup-intents-never-confirmed/
 - [sigma scheduled query runs time out and email nothing](./sigma-scheduled-query-failing/) — https://www.allanninal.dev/stripe/sigma-scheduled-query-failing/
@@ -96,6 +107,7 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 - [the transfers capability is inactive so every transfer 400s](./transfers-capability-inactive/) — https://www.allanninal.dev/stripe/transfers-capability-inactive/
 - [trials ending in days with no card on file](./trial-ends-without-payment-method/) — https://www.allanninal.dev/stripe/trial-ends-without-payment-method/
 - [PaymentMethods are created but never attached to a customer](./unattached-payment-methods-orphaned/) — https://www.allanninal.dev/stripe/unattached-payment-methods-orphaned/
+- [refunds nobody issued with reason expired_uncaptured_charge](./uncaptured-charge-expiry-refunds/) — https://www.allanninal.dev/stripe/uncaptured-charge-expiry-refunds/
 - [undelivered events are aging out of the 30-day window](./undelivered-events-nearing-retention/) — https://www.allanninal.dev/stripe/undelivered-events-nearing-retention/
 - [unpaid subscriptions keep access and stop billing entirely](./unpaid-subscriptions-still-provisioned/) — https://www.allanninal.dev/stripe/unpaid-subscriptions-still-provisioned/
 - [event types are firing that no endpoint subscribes to](./unsubscribed-event-types-firing/) — https://www.allanninal.dev/stripe/unsubscribed-event-types-firing/
