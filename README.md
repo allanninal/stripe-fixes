@@ -11,14 +11,22 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 ## The fixes
 
 - [3DS handoff breaks and requires_action intents pile up](./abandoned-requires-action-intents/) — https://www.allanninal.dev/stripe/abandoned-requires-action-intents/
+- [automatic_tax is off on every invoice while selling abroad](./automatic-tax-disabled-everywhere/) — https://www.allanninal.dev/stripe/automatic-tax-disabled-everywhere/
 - [Checkout Sessions carry no ID that maps back to your order](./checkout-sessions-unreconcilable/) — https://www.allanninal.dev/stripe/checkout-sessions-unreconcilable/
 - [a connected account sits with charges_enabled false](./connected-accounts-charges-disabled/) — https://www.allanninal.dev/stripe/connected-accounts-charges-disabled/
+- [enabled_events lists event types that are dead or rejected](./dead-or-rejected-enabled-events/) — https://www.allanninal.dev/stripe/dead-or-rejected-enabled-events/
 - [disputes are hours from due_by with no evidence attached](./dispute-deadline-72h-no-evidence/) — https://www.allanninal.dev/stripe/dispute-deadline-72h-no-evidence/
 - [disputes closed as lost were never actually contested](./disputes-lost-without-response/) — https://www.allanninal.dev/stripe/disputes-lost-without-response/
+- [draft invoices sit for months and never finalize](./draft-invoices-never-finalized/) — https://www.allanninal.dev/stripe/draft-invoices-never-finalized/
+- [dunning ran out of retries and no attempt is scheduled](./dunning-retries-exhausted/) — https://www.allanninal.dev/stripe/dunning-retries-exhausted/
 - [duplicate customers share an email and split billing](./duplicate-customers-same-email/) — https://www.allanninal.dev/stripe/duplicate-customers-same-email/
 - [two endpoints share one URL, so every event is handled twice](./duplicate-endpoints-same-url/) — https://www.allanninal.dev/stripe/duplicate-endpoints-same-url/
+- [a webhook endpoint is pinned to an ancient api_version](./endpoint-api-version-pinned-stale/) — https://www.allanninal.dev/stripe/endpoint-api-version-pinned-stale/
+- [saved cards are already expired but still attached](./expired-saved-cards-attached/) — https://www.allanninal.dev/stripe/expired-saved-cards-attached/
+- [payment-creating requests carry no idempotency key](./missing-idempotency-keys-on-payments/) — https://www.allanninal.dev/stripe/missing-idempotency-keys-on-payments/
 - [payout.failed is unsubscribed so failures go unseen for days](./missing-payout-failed/) — https://www.allanninal.dev/stripe/missing-payout-failed/
 - [a connected account has no external account to pay out to](./no-external-account-attached/) — https://www.allanninal.dev/stripe/no-external-account-attached/
+- [open invoices are weeks past due_date and nobody chases](./open-invoices-past-due-date/) — https://www.allanninal.dev/stripe/open-invoices-past-due-date/
 - [past_due subscriptions keep their access forever](./past-due-subscriptions-accumulating/) — https://www.allanninal.dev/stripe/past-due-subscriptions-accumulating/
 - [payouts fail with account_closed and nobody is watching](./payouts-failing-bank-rejection/) — https://www.allanninal.dev/stripe/payouts-failing-bank-rejection/
 - [radar blocks payments and nobody reads the block reasons](./radar-blocked-payments-ignored/) — https://www.allanninal.dev/stripe/radar-blocked-payments-ignored/
