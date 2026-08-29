@@ -19,11 +19,16 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 - [active subscriptions already committed to cancel at period end](./cancel-at-period-end-churn-backlog/) — https://www.allanninal.dev/stripe/cancel-at-period-end-churn-backlog/
 - [intents hardcode payment_method_types to card only](./card-only-payment-method-types/) — https://www.allanninal.dev/stripe/card-only-payment-method-types/
 - [saved cards expire within 60 days and nothing warns anyone](./cards-expiring-within-60-days/) — https://www.allanninal.dev/stripe/cards-expiring-within-60-days/
+- [the endpoint listens for charge.succeeded, not payment_intent](./charge-events-but-paymentintent-integration/) — https://www.allanninal.dev/stripe/charge-events-but-paymentintent-integration/
 - [session status is complete but payment_status is still unpaid](./checkout-complete-payment-unpaid/) — https://www.allanninal.dev/stripe/checkout-complete-payment-unpaid/
+- [embedded Checkout never redirects and return_url is null](./checkout-embedded-no-return-url/) — https://www.allanninal.dev/stripe/checkout-embedded-no-return-url/
 - [most Checkout Sessions expire unpaid and nobody is told](./checkout-expired-session-share/) — https://www.allanninal.dev/stripe/checkout-expired-session-share/
+- [guest checkouts finish with customer null and can't be linked](./checkout-guest-customer-null/) — https://www.allanninal.dev/stripe/checkout-guest-customer-null/
+- [expired Checkout Sessions are never recovered by email](./checkout-recovery-never-enabled/) — https://www.allanninal.dev/stripe/checkout-recovery-never-enabled/
 - [Checkout Sessions carry no ID that maps back to your order](./checkout-sessions-unreconcilable/) — https://www.allanninal.dev/stripe/checkout-sessions-unreconcilable/
 - [connect_reserved grows as connected accounts go negative](./connect-reserved-balance-growing/) — https://www.allanninal.dev/stripe/connect-reserved-balance-growing/
 - [a connected account sits with charges_enabled false](./connected-accounts-charges-disabled/) — https://www.allanninal.dev/stripe/connected-accounts-charges-disabled/
+- [customers have no address, so tax and SCA exemptions fail](./customers-missing-address/) — https://www.allanninal.dev/stripe/customers-missing-address/
 - [customers have no email, so Stripe sends no receipts](./customers-missing-email/) — https://www.allanninal.dev/stripe/customers-missing-email/
 - [enabled_events lists event types that are dead or rejected](./dead-or-rejected-enabled-events/) — https://www.allanninal.dev/stripe/dead-or-rejected-enabled-events/
 - [disputes are hours from due_by with no evidence attached](./dispute-deadline-72h-no-evidence/) — https://www.allanninal.dev/stripe/dispute-deadline-72h-no-evidence/
@@ -42,12 +47,14 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 - [metered subscription items with no usage reported](./metered-items-with-no-usage-reported/) — https://www.allanninal.dev/stripe/metered-items-with-no-usage-reported/
 - [nothing subscribes to disputes or early fraud warnings](./missing-dispute-and-fraud-events/) — https://www.allanninal.dev/stripe/missing-dispute-and-fraud-events/
 - [payment-creating requests carry no idempotency key](./missing-idempotency-keys-on-payments/) — https://www.allanninal.dev/stripe/missing-idempotency-keys-on-payments/
+- [no endpoint subscribes to any payment failure event](./missing-payment-failure-events/) — https://www.allanninal.dev/stripe/missing-payment-failure-events/
 - [payout.failed is unsubscribed so failures go unseen for days](./missing-payout-failed/) — https://www.allanninal.dev/stripe/missing-payout-failed/
 - [no statement descriptor, so customers dispute what they see](./missing-statement-descriptor/) — https://www.allanninal.dev/stripe/missing-statement-descriptor/
 - [customer.subscription.deleted is missing, so access never ends](./missing-subscription-deleted/) — https://www.allanninal.dev/stripe/missing-subscription-deleted/
 - [a connected account has no external account to pay out to](./no-external-account-attached/) — https://www.allanninal.dev/stripe/no-external-account-attached/
 - [live mode has no webhook endpoint, so nothing is ever pushed](./no-live-webhook-endpoints/) — https://www.allanninal.dev/stripe/no-live-webhook-endpoints/
 - [no tax registrations while invoicing many countries](./no-tax-registrations-while-selling-abroad/) — https://www.allanninal.dev/stripe/no-tax-registrations-while-selling-abroad/
+- [a live webhook endpoint points at a dev tunnel or http](./non-https-or-tunnel-webhook-url/) — https://www.allanninal.dev/stripe/non-https-or-tunnel-webhook-url/
 - [off-session charges die on authentication_required](./off-session-authentication-required-declines/) — https://www.allanninal.dev/stripe/off-session-authentication-required-declines/
 - [accounts stall at details_submitted false after link expiry](./onboarding-abandoned-details-not-submitted/) — https://www.allanninal.dev/stripe/onboarding-abandoned-details-not-submitted/
 - [open invoices are weeks past due_date and nobody chases](./open-invoices-past-due-date/) — https://www.allanninal.dev/stripe/open-invoices-past-due-date/
@@ -55,6 +62,8 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 - [past_due subscriptions keep their access forever](./past-due-subscriptions-accumulating/) — https://www.allanninal.dev/stripe/past-due-subscriptions-accumulating/
 - [pause_collection with no resumes_at silently bills nothing](./pause-collection-left-on-indefinitely/) — https://www.allanninal.dev/stripe/pause-collection-left-on-indefinitely/
 - [paused subscriptions never resume and never invoice again](./paused-subscriptions-never-resumed/) — https://www.allanninal.dev/stripe/paused-subscriptions-never-resumed/
+- [PaymentIntents have a null customer, so payments are orphaned](./payment-intents-with-null-customer/) — https://www.allanninal.dev/stripe/payment-intents-with-null-customer/
+- [Payment Link ends on Stripe's page, so fulfilment never fires](./payment-link-hosted-confirmation-no-fulfilment/) — https://www.allanninal.dev/stripe/payment-link-hosted-confirmation-no-fulfilment/
 - [a deactivated Payment Link is still linked from your site](./payment-link-inactive-still-published/) — https://www.allanninal.dev/stripe/payment-link-inactive-still-published/
 - [payouts cannot be tied back to their balance transactions](./payout-reconciliation-unavailable/) — https://www.allanninal.dev/stripe/payout-reconciliation-unavailable/
 - [a payout schedule left on manual strands the balance](./payout-schedule-left-on-manual/) — https://www.allanninal.dev/stripe/payout-schedule-left-on-manual/
@@ -64,6 +73,8 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 - [radar reviews sit open for days while funds stay at risk](./radar-reviews-open-stale/) — https://www.allanninal.dev/stripe/radar-reviews-open-stale/
 - [refunds sit failed or requires_action and nobody notices](./refunds-failed-or-stuck/) — https://www.allanninal.dev/stripe/refunds-failed-or-stuck/
 - [requirements.past_due has already disabled the payouts](./requirements-past-due-disables-account/) — https://www.allanninal.dev/stripe/requirements-past-due-disables-account/
+- [save_default_payment_method off orphans the card after payment](./save-default-payment-method-off/) — https://www.allanninal.dev/stripe/save-default-payment-method-off/
+- [SetupIntents use on_session but you bill off-session](./setup-intent-on-session-for-off-session/) — https://www.allanninal.dev/stripe/setup-intent-on-session-for-off-session/
 - [SetupIntents are created but never confirmed by the client](./setup-intents-never-confirmed/) — https://www.allanninal.dev/stripe/setup-intents-never-confirmed/
 - [paymentIntents sit in requires_payment_method for weeks](./stale-requires-payment-method-intents/) — https://www.allanninal.dev/stripe/stale-requires-payment-method-intents/
 - [a second-currency balance bucket can never be paid out](./stranded-currency-balance/) — https://www.allanninal.dev/stripe/stranded-currency-balance/
@@ -75,6 +86,7 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 - [PaymentMethods are created but never attached to a customer](./unattached-payment-methods-orphaned/) — https://www.allanninal.dev/stripe/unattached-payment-methods-orphaned/
 - [undelivered events are aging out of the 30-day window](./undelivered-events-nearing-retention/) — https://www.allanninal.dev/stripe/undelivered-events-nearing-retention/
 - [unpaid subscriptions keep access and stop billing entirely](./unpaid-subscriptions-still-provisioned/) — https://www.allanninal.dev/stripe/unpaid-subscriptions-still-provisioned/
+- [event types are firing that no endpoint subscribes to](./unsubscribed-event-types-firing/) — https://www.allanninal.dev/stripe/unsubscribed-event-types-firing/
 - [requirements.errors explains the rejected document](./verification-errors-unread/) — https://www.allanninal.dev/stripe/verification-errors-unread/
 - [no payment method domain registered, so wallets never show](./wallet-domain-not-registered/) — https://www.allanninal.dev/stripe/wallet-domain-not-registered/
 - [a webhook endpoint sits disabled after days of retries](./webhook-endpoint-disabled/) — https://www.allanninal.dev/stripe/webhook-endpoint-disabled/
