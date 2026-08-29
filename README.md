@@ -12,6 +12,7 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 
 - [3DS handoff breaks and requires_action intents pile up](./abandoned-requires-action-intents/) — https://www.allanninal.dev/stripe/abandoned-requires-action-intents/
 - [automatic_tax is off on every invoice while selling abroad](./automatic-tax-disabled-everywhere/) — https://www.allanninal.dev/stripe/automatic-tax-disabled-everywhere/
+- [charges captured after AVS and CVC verification failed](./avs-cvc-fail-captured/) — https://www.allanninal.dev/stripe/avs-cvc-fail-captured/
 - [no Billing Portal configuration, so portal sessions 400](./billing-portal-no-configuration/) — https://www.allanninal.dev/stripe/billing-portal-no-configuration/
 - [intents hardcode payment_method_types to card only](./card-only-payment-method-types/) — https://www.allanninal.dev/stripe/card-only-payment-method-types/
 - [saved cards expire within 60 days and nothing warns anyone](./cards-expiring-within-60-days/) — https://www.allanninal.dev/stripe/cards-expiring-within-60-days/
@@ -30,18 +31,27 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 - [a webhook endpoint is pinned to an ancient api_version](./endpoint-api-version-pinned-stale/) — https://www.allanninal.dev/stripe/endpoint-api-version-pinned-stale/
 - [events still show pending_webhooks hours after they fired](./events-with-pending-webhooks/) — https://www.allanninal.dev/stripe/events-with-pending-webhooks/
 - [saved cards are already expired but still attached](./expired-saved-cards-attached/) — https://www.allanninal.dev/stripe/expired-saved-cards-attached/
+- [highest-risk charges succeed instead of being blocked](./highest-risk-charges-succeeded/) — https://www.allanninal.dev/stripe/highest-risk-charges-succeeded/
+- [metered subscription items with no usage reported](./metered-items-with-no-usage-reported/) — https://www.allanninal.dev/stripe/metered-items-with-no-usage-reported/
 - [nothing subscribes to disputes or early fraud warnings](./missing-dispute-and-fraud-events/) — https://www.allanninal.dev/stripe/missing-dispute-and-fraud-events/
 - [payment-creating requests carry no idempotency key](./missing-idempotency-keys-on-payments/) — https://www.allanninal.dev/stripe/missing-idempotency-keys-on-payments/
 - [payout.failed is unsubscribed so failures go unseen for days](./missing-payout-failed/) — https://www.allanninal.dev/stripe/missing-payout-failed/
+- [no statement descriptor, so customers dispute what they see](./missing-statement-descriptor/) — https://www.allanninal.dev/stripe/missing-statement-descriptor/
 - [customer.subscription.deleted is missing, so access never ends](./missing-subscription-deleted/) — https://www.allanninal.dev/stripe/missing-subscription-deleted/
 - [a connected account has no external account to pay out to](./no-external-account-attached/) — https://www.allanninal.dev/stripe/no-external-account-attached/
 - [live mode has no webhook endpoint, so nothing is ever pushed](./no-live-webhook-endpoints/) — https://www.allanninal.dev/stripe/no-live-webhook-endpoints/
+- [no tax registrations while invoicing many countries](./no-tax-registrations-while-selling-abroad/) — https://www.allanninal.dev/stripe/no-tax-registrations-while-selling-abroad/
 - [off-session charges die on authentication_required](./off-session-authentication-required-declines/) — https://www.allanninal.dev/stripe/off-session-authentication-required-declines/
+- [accounts stall at details_submitted false after link expiry](./onboarding-abandoned-details-not-submitted/) — https://www.allanninal.dev/stripe/onboarding-abandoned-details-not-submitted/
 - [open invoices are weeks past due_date and nobody chases](./open-invoices-past-due-date/) — https://www.allanninal.dev/stripe/open-invoices-past-due-date/
+- [pending invoice items that never reach an invoice](./orphaned-pending-invoice-items/) — https://www.allanninal.dev/stripe/orphaned-pending-invoice-items/
 - [past_due subscriptions keep their access forever](./past-due-subscriptions-accumulating/) — https://www.allanninal.dev/stripe/past-due-subscriptions-accumulating/
 - [a deactivated Payment Link is still linked from your site](./payment-link-inactive-still-published/) — https://www.allanninal.dev/stripe/payment-link-inactive-still-published/
+- [a payout schedule left on manual strands the balance](./payout-schedule-left-on-manual/) — https://www.allanninal.dev/stripe/payout-schedule-left-on-manual/
 - [payouts fail with account_closed and nobody is watching](./payouts-failing-bank-rejection/) — https://www.allanninal.dev/stripe/payouts-failing-bank-rejection/
+- [prices left at tax_behavior unspecified break tax math](./prices-with-tax-behavior-unspecified/) — https://www.allanninal.dev/stripe/prices-with-tax-behavior-unspecified/
 - [radar blocks payments and nobody reads the block reasons](./radar-blocked-payments-ignored/) — https://www.allanninal.dev/stripe/radar-blocked-payments-ignored/
+- [radar reviews sit open for days while funds stay at risk](./radar-reviews-open-stale/) — https://www.allanninal.dev/stripe/radar-reviews-open-stale/
 - [refunds sit failed or requires_action and nobody notices](./refunds-failed-or-stuck/) — https://www.allanninal.dev/stripe/refunds-failed-or-stuck/
 - [requirements.past_due has already disabled the payouts](./requirements-past-due-disables-account/) — https://www.allanninal.dev/stripe/requirements-past-due-disables-account/
 - [SetupIntents are created but never confirmed by the client](./setup-intents-never-confirmed/) — https://www.allanninal.dev/stripe/setup-intents-never-confirmed/
@@ -49,9 +59,11 @@ Full write ups with diagrams for each fix live at **[allanninal.dev/stripe](http
 - [active subscriptions with nothing to charge on renewal](./subscription-without-payment-method/) — https://www.allanninal.dev/stripe/subscription-without-payment-method/
 - [incomplete subscriptions die silently after 23 hours](./subscriptions-stuck-incomplete/) — https://www.allanninal.dev/stripe/subscriptions-stuck-incomplete/
 - [live charges fail with testmode_decline from test cards](./testmode-decline-in-live-mode/) — https://www.allanninal.dev/stripe/testmode-decline-in-live-mode/
+- [the transfers capability is inactive so every transfer 400s](./transfers-capability-inactive/) — https://www.allanninal.dev/stripe/transfers-capability-inactive/
 - [trials ending in days with no card on file](./trial-ends-without-payment-method/) — https://www.allanninal.dev/stripe/trial-ends-without-payment-method/
 - [PaymentMethods are created but never attached to a customer](./unattached-payment-methods-orphaned/) — https://www.allanninal.dev/stripe/unattached-payment-methods-orphaned/
 - [undelivered events are aging out of the 30-day window](./undelivered-events-nearing-retention/) — https://www.allanninal.dev/stripe/undelivered-events-nearing-retention/
+- [requirements.errors explains the rejected document](./verification-errors-unread/) — https://www.allanninal.dev/stripe/verification-errors-unread/
 - [no payment method domain registered, so wallets never show](./wallet-domain-not-registered/) — https://www.allanninal.dev/stripe/wallet-domain-not-registered/
 - [a webhook endpoint sits disabled after days of retries](./webhook-endpoint-disabled/) — https://www.allanninal.dev/stripe/webhook-endpoint-disabled/
 - [an endpoint subscribes to every event and floods the handler](./wildcard-enabled-events/) — https://www.allanninal.dev/stripe/wildcard-enabled-events/
